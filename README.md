@@ -1,6 +1,6 @@
 # tes-junior
 test ini saya menggunakan html,css,js sama vue js
-1. untuk case 1 berasa di file case1.html disini menggunakan 
+1. untuk case 1 berasa di file case1.html  
 Hasil :
 ![case1](https://user-images.githubusercontent.com/56944631/162977790-a72d0e57-b009-4bde-96a6-a2ac18a32aba.PNG)
 2. Untuk case 2 berada di file case2.html
