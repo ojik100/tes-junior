@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h2>Data Buah Andi </h2>
+        <ul v-for="item in items">
+            <li>{{item.fruitName}}</li>
+        </ul>
+
+
+        <h2>Data Produk bedasarkaan Wadah Local</h2>
+        <ul v-for="locals in local">
+            <li> Nama Buah :{{locals.fruitName}} | Wadah : {{locals.fruitType}} </li>
+        </ul>
+        <h2>Data Produk bedasarkaan Wadah Import</h2>
+
+        <ul v-for="impr in filterimport">
+            <li> Nama Buah :{{impr.fruitName}} | Wadah : {{impr.fruitType}} </li>
+        </ul>
+        <h2>Total Stok Produk</h2>
+        <li v-if="local.length">Total Buah di Local = {{ local.length }}</li>
+        <li v-if="filterimport.length">Total Buah di Import = {{ filterimport.length }}</li>
+    </div>
+
+
+</body>
+<script src=" https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js "></script>
+
+</html>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+
+        data: {
+
+            items: [{
+                fruitId: 1,
+                fruitName: 'Apel',
+                fruitType: 'IMPORT',
+                stock: 10
+            }, {
+                fruitId: 2,
+                fruitName: 'Kurma',
+                fruitType: 'IMPORT',
+                stock: 20
+            }, {
+                fruitId: 3,
+                fruitName: 'apel',
+                fruitType: 'IMPORT',
+                stock: 50
+            }, {
+                fruitId: 4,
+                fruitName: 'Manggis',
+                fruitType: 'LOCAL',
+                stock: 100
+            }, {
+                fruitId: 5,
+                fruitName: 'Jeruk Bali',
+                fruitType: 'LOCAL',
+                stock: 10
+            }, {
+                fruitId: 5,
+                fruitName: 'KURMA',
+                fruitType: 'IMPORT',
+                stock: 20
+            }, {
+                fruitId: 5,
+                fruitName: 'Salak',
+                fruitType: 'LOCAL',
+                stock: 150
+            }]
+        },
+        //pentup
+
+        computed: {
+
+            local() {
+                return this.items.filter(item => item.fruitType === 'LOCAL')
+            },
+            filterimport() {
+                return this.items.filter(item => item.fruitType === 'IMPORT')
+            },
+
+        },
+
+
+
+
+    })
+</script>
